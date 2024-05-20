@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "workshop-manuals-breadcrumb-fix",
+  "version": "1.0",
+  "description": "Web browser addon, which fixes breadcrumb on workshop-manuals.com",
+  "icons": {
+    "48": "icons/slw-icon-48.png",
+    "96": "icons/slw-icon-96.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://workshop-manuals.com/volkswagen/*/fullindex/"
+      ],
+      "js": [
+        "workshop-manuals-breadcrumb-fix.js"
+      ]
+    }
+  ],
+
+ 
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "workshop-manuals-breadcrumb-fix@skadlitwiniwracaja.ddns.net"
+    }
+  }
+}
