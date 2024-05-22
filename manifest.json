@@ -15,10 +15,20 @@
       "js": [
         "workshop-manuals-breadcrumb-fix.js"
       ]
+    },
+    {
+      "matches": [
+        "*://workshop-manuals.com/volkswagen/*/*/*"
+      ],
+      "js": [
+        "workshop-manuals-popup-fix.js"
+      ]
     }
   ],
 
- 
+  "permissions": [
+    "webRequest"
+  ],
 
   "browser_specific_settings": {
     "gecko": {

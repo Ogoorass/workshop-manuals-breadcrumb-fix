@@ -30,13 +30,18 @@ old_breadcrumb.replaceWith(new_breadcrumb);
 
 let all_li = document.querySelectorAll("li");
 all_li.forEach((x) => {
-  if (x.childElementCount < 2) {
+  if (x.lastChild.nodeName != "A" && x.lastChild.nodeName != "#text") {
     let button = document.createElement("span");
     button.classList = "dropdown-button";
     button.appendChild(document.createTextNode("🠿"));
     button.onclick = function () {
-      this.parentNode.children[1].classList.toggle("shown");
+      this.parentNode.lastChild.classList.toggle("shown");
+      if (this.parentNode.lastChild.classList.value.includes("shown")) {
+        this.firstChild.nodeValue = "🠽";
+      } else {
+        this.firstChild.nodeValue = "🠿";
+      }
     };
-    x.insertBefore(button, x.children[0]);
+    x.insertBefore(button, x.children[x.children.length - 1]);
   }
 });
